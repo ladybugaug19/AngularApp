@@ -1,11 +1,8 @@
 <nav class="navbar navbar-dark bg-dark mb-4 navbar-expand">
     <div class="container">
-      <a
-        [routerLink]="['/']"
-        routerLinkActive="router-link-active"
-        class="navbar-brand"
-        ><i class="fas fa-bug"></i> LadyBug</a
+        <a [routerLink]="['/']" routerLinkActive="router-link-active" class="navbar-brand"><i class="fas fa-bug"></i> LadyBug - BTS Portal</a
       >
+      
       <!-- Nav Items  -->
       <div>
         <ul class="navbar-nav ml-auto">
@@ -26,29 +23,16 @@
             class="nav-item"
           >
             <a class="nav-link">Login</a>
-          </li>
-  
-          <li
-            *ngIf="!authService.isLoggedIn()"
-            [routerLink]="['/register']"
-            [routerLinkActive]="['active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-            class="nav-item"
-          >
+        </li>
+
+        <li *ngIf="!authService.isLoggedIn()" [routerLink]="['/register']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" class="nav-item">
             <a class="nav-link">Register</a>
-          </li>
-  
-          <li
-            *ngIf="authService.isLoggedIn()"
-            class="nav-item"
-            (click)="authService.logout()"
-          >
+        </li>
+
+        <li *ngIf="authService.isLoggedIn()" class="nav-item" (click)="authService.logout()">
             <a class="nav-link">Logout</a>
-          </li>
+        </li>
         </ul>
-      </div>
     </div>
-  </nav>
-
-
-  
+    </div>
+</nav>

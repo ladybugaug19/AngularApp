@@ -12,6 +12,7 @@ import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ResetPwdComponent } from './auth/reset-pwd/reset-pwd.component';
 import { SubmitPwdComponent } from './auth/submit-pwd/submit-pwd.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { SubmitPwdComponent } from './auth/submit-pwd/submit-pwd.component';
     SubmitPwdComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [AuthService],
+  providers: [AuthService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
