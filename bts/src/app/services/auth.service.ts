@@ -20,7 +20,7 @@ export class AuthService {
   //login validating employee
   public validateUser(email, password) {
     return this.httpClient
-      .post<any>("http://192.168.43.230:7070/authenticate", {
+      .post<any>("http://192.168.40.131:81/authenticate", {
         email: email,
         password: password
       })
@@ -42,7 +42,7 @@ export class AuthService {
   public register(empId, empName, empEmail, empPassword, empRole, empUserName) {
     console.log(empId);
     return this.httpClient
-      .post<any>("http://192.168.43.230:7070/register", {
+      .post<any>("http://192.168.40.131:81/register", {
         empId: empId,
         empName: empName,
         empEmail: empEmail,
@@ -68,7 +68,7 @@ export class AuthService {
     console.log("in authservice");
     console.log(email);
     return this.httpClient
-      .post<any>("http://192.168.43.244:7070/forgot", {
+      .post<any>("http://192.168.40.131:81/forgot", {
         email: email
       })
       .pipe(
@@ -90,7 +90,7 @@ export class AuthService {
   public submitPwd(password, token) {
     console.log(token);
     return this.httpClient
-      .post<any>("http://192.168.43.244:7070/reset/" + token, {
+      .post<any>("http://192.168.40.131:81/reset/" + token, {
         password: password
       })
       .pipe(
